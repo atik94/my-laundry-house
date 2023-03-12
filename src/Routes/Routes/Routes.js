@@ -9,6 +9,7 @@ import Blog from "../../Pages/Home/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home";
 import NotFound from "../../Pages/Home/NotFound/NotFound";
 import ServicesAll from "../../Pages/Home/Services/ServicesAll";
+import ViewDetails from "../../Pages/Home/Services/ViewDetails";
 import Login from "../../Pages/Login/Login";
 import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
@@ -43,6 +44,11 @@ const router = createBrowserRouter([
       {
         path: "/services",
         element: <ServicesAll></ServicesAll>,
+      },
+      {
+        path: "/viewDetails/:id",
+        element: <ViewDetails></ViewDetails>,
+        loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`),
       },
     ],
   },
