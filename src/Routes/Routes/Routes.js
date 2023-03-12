@@ -1,12 +1,14 @@
 import { createBrowserRouter } from "react-router-dom";
 import DashboardLayout from "../../Layout/DashboardLayout";
 import Main from "../../Layout/Main";
+import AddService from "../../Pages/Dashboard/AddService/AddService";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
 import AboutUs from "../../Pages/Home/AboutUs/AboutUs";
 import Blog from "../../Pages/Home/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home";
 import NotFound from "../../Pages/Home/NotFound/NotFound";
+import ServicesAll from "../../Pages/Home/Services/ServicesAll";
 import Login from "../../Pages/Login/Login";
 import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
@@ -38,6 +40,10 @@ const router = createBrowserRouter([
         path: "/signup",
         element: <SignUp></SignUp>,
       },
+      {
+        path: "/services",
+        element: <ServicesAll></ServicesAll>,
+      },
     ],
   },
   {
@@ -58,6 +64,14 @@ const router = createBrowserRouter([
         element: (
           <AdminRoute>
             <AllUsers></AllUsers>
+          </AdminRoute>
+        ),
+      },
+      {
+        path: "/dashboard/addService",
+        element: (
+          <AdminRoute>
+            <AddService></AddService>
           </AdminRoute>
         ),
       },
