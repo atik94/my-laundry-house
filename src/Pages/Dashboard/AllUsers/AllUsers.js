@@ -44,6 +44,7 @@ const AllUsers = () => {
           <thead>
             <tr>
               <th></th>
+              <th>Image</th>
               <th>Name</th>
               <th>Email</th>
               <th>Role</th>
@@ -55,6 +56,13 @@ const AllUsers = () => {
             {users.map((user, i) => (
               <tr key={user._id}>
                 <th>{i + 1}</th>
+                <td>
+                  <div className="avatar">
+                    <div className="w-24 mask mask-hexagon">
+                      <img src={user.image} alt="" />
+                    </div>
+                  </div>
+                </td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.role}</td>

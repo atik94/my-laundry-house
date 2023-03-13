@@ -25,12 +25,14 @@ const ViewDetails = () => {
     const email = user?.email || "Unregistered";
     // const image = form.image.value;
     const message = form.message.value;
+    const customerPhoto = form.customerPhoto.value;
     const review = {
       service: _id,
       serviceName: title,
       customer: name,
       email,
       message,
+      customerPhoto,
     };
     fetch("http://localhost:5000/reviews", {
       method: "POST",
@@ -63,9 +65,10 @@ const ViewDetails = () => {
           <p>{description}</p>
         </div>
       </div>
-      <div className="flex justify-between">
+      <div className="flex justify-between mt-5">
         <div>
-          <h2>Reviews and ratings</h2>
+          <h2 className="ml-12 text-xl">Total Reviews : {reviews.length}</h2>
+          <h2 className="mb-5 ml-5 text-2xl font-semibold">Reviews and Ratings</h2>
           {reviews.map((review) => (
             <ReviewCard key={review._id} review={review}></ReviewCard>
           ))}
@@ -101,6 +104,13 @@ const ViewDetails = () => {
                     className="input input-bordered w-full"
                     readOnly
                   />
+                  <input
+                    name="customerPhoto"
+                    type="text"
+                    defaultValue={user?.photoURL}
+                    className="input input-bordered w-full"
+                    readOnly
+                  />
                 </div>
                 <textarea
                   name="message"
@@ -111,12 +121,12 @@ const ViewDetails = () => {
               </form>
             </>
           ) : (
-            <p>
-              please login to write a review
-              <button className="btn">
+            <div className="flex gap-5">
+              <p className="mt-2 text-2xl"> Please login to write review</p>
+              <button className="btn btn-outline btn-success">
                 <Link to="/login">Login</Link>
               </button>
-            </p>
+            </div>
           )}
         </div>
       </div>
