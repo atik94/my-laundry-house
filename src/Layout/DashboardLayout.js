@@ -24,13 +24,13 @@ const DashboardLayout = () => {
               <Link to="/dashboard">Dashboard</Link>
             </li>
 
-            {/* {isUser && (
+            {isUser && (
               <>
                 <li>
-                  <Link to="/dashboard/myorders">My Orders</Link>
+                  <Link to="/dashboard/myreview">My Reviews</Link>
                 </li>
               </>
-            )} */}
+            )}
 
             {isAdmin && (
               <>

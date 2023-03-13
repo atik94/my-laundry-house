@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
+import { toast } from "react-hot-toast";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../contexts/AuthProvider";
 import useTitle from "../../../hooks/useTitle";
@@ -42,7 +43,7 @@ const ViewDetails = () => {
       .then((data) => {
         console.log(data);
         if (data.acknowledged) {
-          alert("Review submit successfully");
+          toast.success("Review submit successfully");
           form.reset();
         }
       })

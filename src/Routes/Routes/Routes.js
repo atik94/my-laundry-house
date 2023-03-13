@@ -4,6 +4,8 @@ import Main from "../../Layout/Main";
 import AddService from "../../Pages/Dashboard/AddService/AddService";
 import AllUsers from "../../Pages/Dashboard/AllUsers/AllUsers";
 import Dashboard from "../../Pages/Dashboard/Dashboard/Dashboard";
+import MyReviews from "../../Pages/Dashboard/MyReviews/MyReviews";
+import ReviewUpdate from "../../Pages/Dashboard/MyReviews/ReviewUpdate";
 import AboutUs from "../../Pages/Home/AboutUs/AboutUs";
 import Blog from "../../Pages/Home/Blog/Blog";
 import Home from "../../Pages/Home/Home/Home";
@@ -15,6 +17,7 @@ import DisplayError from "../../Pages/Shared/DisplayError/DisplayError";
 import SignUp from "../../Pages/SignUp/SignUp";
 import AdminRoute from "../AdminRoute/AdminRoute";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
+import UserRoute from "../UserRoute/UserRoute";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -80,6 +83,23 @@ const router = createBrowserRouter([
             <AddService></AddService>
           </AdminRoute>
         ),
+      },
+      {
+        path: "/dashboard/myreview",
+        element: (
+          <UserRoute>
+            <MyReviews></MyReviews>
+          </UserRoute>
+        ),
+      },
+      {
+        path: "/dashboard/update/:id",
+        element: (
+          <UserRoute>
+            <ReviewUpdate></ReviewUpdate>
+          </UserRoute>
+        ),
+        loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`),
       },
     ],
   },
