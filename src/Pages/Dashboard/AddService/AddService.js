@@ -6,7 +6,7 @@ import { AuthContext } from "../../../contexts/AuthProvider";
 import useTitle from "../../../hooks/useTitle";
 
 const AddService = () => {
-  useTitle("Add-product");
+  useTitle("Add-Service");
   const {
     register,
     formState: { errors },

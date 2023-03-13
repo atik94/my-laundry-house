@@ -249,7 +249,6 @@ const SignUp = () => {
           </div>
           <div className="form-control w-full max-w-xs">
             <label className="label">
-              {" "}
               <span className="label-text">Email</span>
             </label>
             <input
@@ -283,7 +282,7 @@ const SignUp = () => {
           <div className="form-control w-full max-w-xs">
             <label className="label">
               {" "}
-              <span className="label-text">upload Image</span>
+              <span className="label-text">Upload Image</span>
             </label>
             <input
               type="file"
@@ -295,7 +294,7 @@ const SignUp = () => {
             {errors.image && <p className="text-red-600">{errors.image?.message}</p>}
           </div>
           {/* <input className="btn btn-accent w-full mt-4" value="Sign Up" type="submit" /> */}
-          <button className="btn btn-primary w-full">{loading ? <SmallSpinner /> : "Sign Up"}</button>
+          <button className="btn btn-primary w-full mt-2">{loading ? <SmallSpinner /> : "Sign Up"}</button>
           {signUpError && <p className="text-red-600">{signUpError}</p>}
         </form>
         <p>
@@ -305,7 +304,7 @@ const SignUp = () => {
           </Link>
         </p>
         <div className="divider">OR</div>
-        <button onClick={handleGoogleSignin} className="btn btn-outline w-full">
+        <button onClick={handleGoogleSignin} className="btn btn-outline btn-primary w-full">
           CONTINUE WITH GOOGLE
         </button>
       </div>

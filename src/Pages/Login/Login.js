@@ -108,19 +108,21 @@ const Login = () => {
             <input type="password" name="password" className="input input-bordered w-full max-w-xs" required />
           </div>
           {/* <input className="btn btn-accent w-full" value="Login" type="submit" /> */}
-          <button className="btn btn-primary w-full">{loading ? <SmallSpinner /> : "Login"}</button>
+          <button className="btn btn-primary w-full mt-2">{loading ? <SmallSpinner /> : "Login"}</button>
           <div>{loginError && <p className="text-red-600">{loginError}</p>}</div>
         </form>
         <p>
-          New to Mobile resale market
+          New to My Laundry House ?
           <Link className="text-secondary" to="/signup">
             Create new Account
           </Link>
         </p>
-        <p>Forget Password?</p>
-        <button onClick={handleReset}>Please reset</button>
+        <span className="text-xl mr-2">Forget Password?</span>
+        <button onClick={handleReset} className="btn btn-outline btn-primary">
+          Please reset
+        </button>
         <div className="divider">OR</div>
-        <button onClick={handleGoogleSignin} className="btn btn-outline w-full">
+        <button onClick={handleGoogleSignin} className="btn btn-outline btn-primary w-full">
           CONTINUE WITH GOOGLE
         </button>
       </div>

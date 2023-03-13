@@ -62,9 +62,9 @@ const Navbar = () => {
           </ul>
         </div>
         <Link to="/" className="btn btn-ghost normal-case text-xl">
-          <span className="text-3xl font-bold text-orange-700">M</span>obile
-          <span className="text-3xl font-bold text-lime-500">R</span>
-          esale <span className="text-3xl font-bold text-fuchsia-700">M</span>arket
+          <span className="text-3xl font-bold text-orange-700">My</span>
+          <span className="text-3xl font-bold text-lime-500">L</span>
+          aundry <span className="text-3xl font-bold text-fuchsia-700">H</span>ouse
         </Link>
       </div>
       <div className="navbar-center hidden lg:flex">

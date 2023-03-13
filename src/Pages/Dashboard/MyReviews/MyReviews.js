@@ -48,7 +48,8 @@ const MyReviews = () => {
           <thead>
             <tr>
               <th></th>
-              <th>Name</th>
+              <th>Customer Photo</th>
+              <th>Customer Name</th>
               <th>Service Title</th>
               <th>Reviews</th>
               <th>Action</th>
@@ -58,6 +59,13 @@ const MyReviews = () => {
             {reviews.map((review, i) => (
               <tr key={review._id}>
                 <th>{i + 1}</th>
+                <td>
+                  <div className="avatar">
+                    <div className="w-20 rounded-full">
+                      <img src={review.customerPhoto} alt="" />
+                    </div>
+                  </div>
+                </td>
                 <td>{review.customer}</td>
                 <td>{review.serviceName}</td>
                 <td>{review.message}</td>

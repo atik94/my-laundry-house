@@ -1,14 +1,22 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import Spinner from "../../../components/Spinner/Spinner";
 import ServiceCard from "./ServiceCard";
 
 const Services = () => {
   const [services, setServices] = useState([]);
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
+    setLoading(true);
     fetch("http://localhost:5000/services")
       .then((res) => res.json())
       .then((data) => setServices(data));
+    setLoading(false);
   }, []);
+
+  if (loading) {
+    return <Spinner></Spinner>;
+  }
   return (
     <div className="my-20">
       <div className="text-center mb-2">
